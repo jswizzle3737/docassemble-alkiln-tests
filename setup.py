@@ -6,11 +6,12 @@ def find_package_data(where='.', package=''):
     Find package_data.
     
     Borrowed from Docassemble.
+    Optimized to use pop() instead of pop(0) for O(1) performance.
     """
     out = {}
     stack = [(where, '', package)]
     while stack:
-        where, prefix, package = stack.pop(0)
+        where, prefix, package = stack.pop()
         for name in os.listdir(where):
             fn = os.path.join(where, name)
             if os.path.isdir(fn):
