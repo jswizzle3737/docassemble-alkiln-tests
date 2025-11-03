@@ -27,7 +27,7 @@ Your docassemble API key is ready: `1gcxf6lPnmwGVlqe2OHIPp2yAkCt25uy`
 3. **Create these secrets** by clicking "New repository secret":
 
    - **Name:** `SERVER_URL`
-     **Value:** `https://docassemble-uugcj-u59651.vm.elestio.app/`
+     **Value:** `https://docassemble-uugcj-u59651.vm.elestio.app:443/`
 
    - **Name:** `DOCASSEMBLE_DEVELOPER_API_KEY`
      **Value:** `1gcxf6lPnmwGVlqe2OHIPp2yAkCt25uy`
