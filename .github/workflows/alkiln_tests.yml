@@ -18,5 +18,5 @@ jobs:
       - name: Run ALKiln tests
         uses: SuffolkLITLab/ALKiln@v5
         with:
-          SERVER_URL: "${{ secrets.SERVER_URL }}"
-          DOCASSEMBLE_DEVELOPER_API_KEY: "${{ secrets.DOCASSEMBLE_DEVELOPER_API_KEY }}"
+          SERVER_URL: ${{ secrets.SERVER_URL }}
+          DOCASSEMBLE_DEVELOPER_API_KEY: ${{ secrets.DOCASSEMBLE_DEVELOPER_API_KEY }}
