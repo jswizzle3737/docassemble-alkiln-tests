@@ -1,7 +1,7 @@
 Feature: Interviews load
 
 Scenario: Test server connection
-  Given I start the interview at "docassemble.base:data/questions/examples/hello-world.yml"
+  Given I start the interview at "test"
 
 # If the above fails, try these alternatives:
 # Scenario: Basic connection test  

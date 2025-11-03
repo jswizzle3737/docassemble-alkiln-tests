@@ -1,0 +1,20 @@
+---
+metadata:
+  title: ALKiln Test Interview
+  short title: Test
+---
+mandatory: True
+question: |
+  Hello, this is a test interview!
+subquestion: |
+  This is a simple test interview for ALKiln testing.
+buttons:
+  - Continue: continue
+---
+mandatory: True
+question: |
+  Test completed
+subquestion: |
+  Thank you for testing!
+buttons:
+  - Restart: restart
