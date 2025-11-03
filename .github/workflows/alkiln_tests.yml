@@ -1,5 +1,6 @@
 name: ALKiln Tests
 
+# Run tests automatically on push or pull request
 on:
   push:
     branches: [main, master]
@@ -9,9 +10,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    name: Run Interview Tests
     steps:
     - uses: actions/checkout@v4
-    - uses: SuffolkLITLab/ALKiln@v5
+    - name: Run ALKiln Tests
+      uses: SuffolkLITLab/ALKiln@v5
       with:
         SERVER_URL: ${{ secrets.SERVER_URL }}
         DOCASSEMBLE_DEVELOPER_API_KEY: ${{ secrets.DOCASSEMBLE_DEVELOPER_API_KEY }}

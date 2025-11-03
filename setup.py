@@ -25,7 +25,7 @@ setup(
     name='docassemble.alkilntests',
     version='1.0.0',
     description='ALKiln testing package for docassemble interviews',
-    long_description='ALKiln testing package for docassemble interviews',
+    long_description='Automated testing environment for docassemble interviews using ALKiln. Write Gherkin test scenarios to validate your interview workflows.',
     long_description_content_type='text/markdown',
     author='jswizzle3737',
     author_email='your.email@example.com',
