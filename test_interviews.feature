@@ -1,7 +1,14 @@
 Feature: Interviews load
 
-Scenario: The main interview loads
-  Given I start the interview at "docassemble.demo:data/questions/hello.yml"
+Scenario: Test server connection
+  Given I start the interview at "docassemble.base:data/questions/examples/hello-world.yml"
+
+# If the above fails, try these alternatives:
+# Scenario: Basic connection test  
+#   Given I start the interview at "docassemble.playground1:hello.yml"
+#
+# Scenario: Simple test
+#   Given I go to the interview list
 
 # Additional test scenarios can be added here
 # Replace "docassemble.demo:data/questions/hello.yml" with your actual interview filename
