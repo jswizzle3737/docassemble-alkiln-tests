@@ -8,25 +8,28 @@
 
 1. **Verify SERVER_URL Secret**
    - Go to: Settings → Secrets and variables → Actions
-   - Check `SERVER_URL` value is **exactly**: `https://docassemble-uugcj-u59651.vm.elestio.app:443/`
-   - ⚠️ Must include `:443` (the port)
+   - Check `SERVER_URL` value is correct for your server
+   - ⚠️ Must include port (`:443` for HTTPS, or appropriate port)
    - ⚠️ Must end with `/` (trailing slash)
+   - Example: `https://your-server.com:443/`
    - If wrong, delete and recreate it
 
 2. **Verify API Key Secret**
    - Go to: Settings → Secrets and variables → Actions
-   - Check `DOCASSEMBLE_DEVELOPER_API_KEY` is **exactly**: `1gcxf6lPnmwGVlqe2OHIPp2yAkCt25uy`
+   - Check `DOCASSEMBLE_DEVELOPER_API_KEY` matches your server's API key
+   - Get the correct key from: User menu → API keys on your docassemble server
    - If wrong, delete and recreate it
 
 3. **Check Server is Running**
-   - Visit `https://docassemble-uugcj-u59651.vm.elestio.app:443/` in your browser
+   - Visit your docassemble server URL in your browser
    - Should see docassemble login page
    - If not, server is down or unreachable
 
 4. **Check API Key is Active**
    - Log into your docassemble server
    - Go to: User menu → API keys
-   - Make sure `1gcxf6lPnmwGVlqe2OHIPp2yAkCt25uy` shows as active
+   - Make sure your API key shows as active
+   - If expired or deleted, create a new one
 
 ### Still failing? Try this:
 ```bash

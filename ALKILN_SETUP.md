@@ -15,10 +15,13 @@ This repository has been set up with the basic ALKiln testing framework. Here's 
 
 ## 🔧 Manual Setup Required
 
-⚠️ **IMPORTANT**: The values below are ready to use. You just need to add them as GitHub secrets.
+⚠️ **IMPORTANT**: You need to obtain credentials from your docassemble server and add them as GitHub secrets.
 
-### Step 1: ✅ API Key Ready
-Your docassemble API key is ready: `1gcxf6lPnmwGVlqe2OHIPp2yAkCt25uy`
+### Step 1: Get Your API Key
+1. Log into your docassemble server
+2. Go to: **User menu** → **API keys**
+3. Click **"Add a new API key"**
+4. Copy the generated API key (save it securely - you'll need it for Step 2)
 
 ### Step 2: Create GitHub Secrets
 
@@ -27,10 +30,17 @@ Your docassemble API key is ready: `1gcxf6lPnmwGVlqe2OHIPp2yAkCt25uy`
 3. **Create these secrets** by clicking "New repository secret":
 
    - **Name:** `SERVER_URL`
-     **Value:** `https://docassemble-uugcj-u59651.vm.elestio.app:443/`
+     **Value:** Your docassemble server URL with port and trailing slash
+     **Example:** `https://your-server.com:443/`
 
    - **Name:** `DOCASSEMBLE_DEVELOPER_API_KEY`
-     **Value:** `1gcxf6lPnmwGVlqe2OHIPp2yAkCt25uy`
+     **Value:** The API key you created in Step 1
+
+**Important Notes:**
+- `SERVER_URL` must include `:443` (or appropriate port) and end with `/`
+- Never commit these values to your git repository
+- Use a dedicated test server, not production
+- Create a dedicated test account for API access
 
 ### Step 3: Update Test File
 

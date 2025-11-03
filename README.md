@@ -8,6 +8,18 @@ Automated testing environment for docassemble interviews using [ALKiln](https://
 
 ---
 
+## 🔒 SECURITY WARNING
+
+**⚠️ NEVER commit credentials to your repository!**
+
+If you've previously committed API keys or server URLs:
+1. **Immediately revoke the exposed API key** on your docassemble server
+2. **Generate a new API key**
+3. **Remove credentials from git history** using [BFG Repo-Cleaner](https://rtyley.github.io/bfg-repo-cleaner/) or `git filter-branch`
+4. **Add new credentials as GitHub secrets only** (never in code)
+
+---
+
 ## ⚡ Quick Start (2 minutes)
 
 ### 1️⃣ Add GitHub Secrets
@@ -16,8 +28,13 @@ Automated testing environment for docassemble interviews using [ALKiln](https://
 
 | Secret Name | Value |
 |---|---|
-| `SERVER_URL` | `https://docassemble-uugcj-u59651.vm.elestio.app:443/` |
-| `DOCASSEMBLE_DEVELOPER_API_KEY` | `1gcxf6lPnmwGVlqe2OHIPp2yAkCt25uy` |
+| `SERVER_URL` | Your docassemble server URL (e.g., `https://your-server.com:443/`) |
+| `DOCASSEMBLE_DEVELOPER_API_KEY` | Your API key from docassemble (get from User menu → API keys) |
+
+**Important:**
+- `SERVER_URL` must include the port (`:443` for HTTPS) and trailing slash (`/`)
+- Get your API key from your docassemble server: User menu → API keys → Create new key
+- Never commit these values to your repository!
 
 ### 2️⃣ Create Your Test File
 Create `test_interviews.feature`:
