@@ -25,8 +25,8 @@ def find_package_data(where='.', package=''):
 setup(
     name='docassemble.alkilntests',
     version='1.0.0',
-    description='ALKiln testing package for docassemble interviews',
-    long_description='Automated testing environment for docassemble interviews using ALKiln. Write Gherkin test scenarios to validate your interview workflows.',
+    description='Comprehensive ALKiln testing framework for docassemble interviews with organized test examples',
+    long_description='Automated end-to-end testing environment for docassemble legal interviews using the ALKiln framework. Write behavior-driven Gherkin test scenarios to validate interview workflows, with categorized examples for common patterns including form validation, conditional logic, multi-page flows, and button navigation.',
     long_description_content_type='text/markdown',
     author='jswizzle3737',
     author_email='your.email@example.com',

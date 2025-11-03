@@ -4,23 +4,26 @@ New to this project? Follow these steps to get your first test running in 5 minu
 
 ## Step 1: Set Up GitHub Secrets (2 min)
 
-Your docassemble server credentials are ready. You just need to add them to GitHub.
+First, get your API key from your docassemble testing server:
 
-1. **Open this link in your browser:**
-   ```
-   https://github.com/jswizzle3737/docassemble-alkiln-tests/settings/secrets/actions
-   ```
+1. **Get Your API Key:**
+   - Log into your docassemble testing server
+   - Go to: User menu → API keys
+   - Create a new API key or copy an existing test key
 
-2. **Click "New repository secret"**
+2. **Add Secrets to GitHub:**
+   - Go to your repo: Settings → Secrets and variables → Actions
+   - Click "New repository secret"
 
 3. **Add First Secret:**
    - Name: `SERVER_URL`
-   - Value: `https://docassemble-uugcj-u59651.vm.elestio.app:443/`
+   - Value: Your docassemble testing server URL with port and trailing slash
+   - Format: `https://your-server.com:443/`
    - Click "Add secret"
 
 4. **Add Second Secret:**
    - Name: `DOCASSEMBLE_DEVELOPER_API_KEY`
-   - Value: `1gcxf6lPnmwGVlqe2OHIPp2yAkCt25uy`
+   - Value: The API key from step 1
    - Click "Add secret"
 
 ✅ **Done!** Both secrets are now saved.
@@ -91,9 +94,25 @@ git push origin main
 
 ## 📝 Next: Write Better Tests
 
-Once your first test passes, try these common scenarios:
+Once your first test passes, explore the `test_examples/` directory for ready-to-use patterns organized by category:
 
-### Fill Out a Form
+### 📁 Browse Test Pattern Examples
+
+```
+test_examples/
+├── basic_tests.feature              # Simple forms, smoke tests
+├── conditional_logic_tests.feature  # If/then branches, eligibility checks
+├── multi_page_tests.feature         # Multi-step interview flows
+├── button_navigation_tests.feature  # Button clicks, dynamic forms
+├── validation_tests.feature         # Required fields, error handling
+└── README.md                        # Complete usage guide
+```
+
+See `test_examples/README.md` for how to use these patterns.
+
+### Quick Examples from the Collection
+
+#### Fill Out a Form (from basic_tests.feature)
 ```gherkin
 Scenario: User fills out intake form
   Given I start the interview at "intake_form"

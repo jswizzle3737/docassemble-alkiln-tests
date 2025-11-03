@@ -1,57 +1,53 @@
-# Write your interview tests here using Gherkin syntax
-# See GETTING_STARTED.md for examples and guidance
+# =============================================================================
+# Your Interview Tests
+# =============================================================================
+# Write your interview tests here using Gherkin syntax.
+# See test_examples/ directory for categorized test patterns you can copy.
+# See GETTING_STARTED.md and README.md for detailed guidance.
+#
+# 💡 TIP: Look at test_examples/ directory for ready-to-use patterns:
+#    - basic_tests.feature - Simple forms and navigation
+#    - conditional_logic_tests.feature - Branching logic
+#    - multi_page_tests.feature - Complex multi-step interviews
+#    - button_navigation_tests.feature - Button clicks
+#    - validation_tests.feature - Error handling and validation
+#
+# 📚 Full ALKiln documentation:
+# https://assemblyline.suffolklitlab.org/docs/components/ALKiln/alkiln/
+# =============================================================================
 
 Feature: Interview Tests
 
-# ✅ EXAMPLE TEST - Replace with your own!
-Scenario: Example test scenario
-  Given I start the interview at "test"
-  And I continue
-  Then I should see the phrase "Thank you"
+  # =============================================================================
+  # SMOKE TESTS - Verify basic functionality
+  # =============================================================================
+  
+  Scenario: Interview loads successfully
+    Given I start the interview at "test"
+    And I continue
+    Then I should see the phrase "Thank you"
 
-# 📝 COMMON TEST PATTERNS (uncomment and modify as needed)
-
-# Pattern 1: Simple form submission
-# Scenario: User submits intake form
-#   Given I start the interview at "intake_form"
-#   And I set the var "client_name" to "John Doe"
-#   And I continue
-#   Then I should see the phrase "Form received"
-
-# Pattern 2: Multi-step interview
-# Scenario: Complete divorce petition
-#   Given I start the interview at "divorce_papers"
-#   And I continue
-#   Then I should see the phrase "Spouse information"
-#   And I set the var "spouse_name" to "Jane Smith"
-#   And I continue
-#   Then I should see the phrase "Property division"
-
-# Pattern 3: Button clicks and navigation
-# Scenario: Navigate using buttons
-#   Given I start the interview at "quiz"
-#   And I continue
-#   Then I should see the phrase "Question 1"
-#   And I click the button for "answer_a"
-#   And I continue
-#   Then I should see the phrase "Correct!"
-
-# Pattern 4: Boolean variables
-# Scenario: Handle yes/no questions
-#   Given I start the interview at "screening"
-#   And I set the var "eligible_to_file" to "True"
-#   And I continue
-#   Then I should see the phrase "Proceed to filing"
-
-# Pattern 5: Multiple variables
-# Scenario: Complex form with multiple fields
-#   Given I start the interview at "application"
-#   And I set the var "first_name" to "John"
-#   And I set the var "last_name" to "Doe"
-#   And I set the var "phone_number" to "555-1234"
-#   And I set the var "email" to "john@example.com"
-#   And I continue
-#   Then I should see the phrase "Application complete"
-
-# 📚 For complete ALKiln step documentation, see:
-# https://assemblyline.suffolklitlab.org/docs/components/ALKiln/alkiln/
+  # =============================================================================
+  # YOUR CUSTOM TESTS - Add your interview-specific tests below
+  # =============================================================================
+  
+  # Example: Uncomment and customize these patterns for your interviews
+  
+  # Scenario: User completes intake form
+  #   Given I start the interview at "your_interview_name"
+  #   And I set the var "client_name" to "John Doe"
+  #   And I set the var "client_email" to "john@example.com"
+  #   And I continue
+  #   Then I should see the phrase "Form submitted"
+  
+  # Scenario: Eligible user proceeds to application
+  #   Given I start the interview at "eligibility_check"
+  #   And I set the var "income_level" to "50000"
+  #   And I set the var "has_dependents" to "True"
+  #   And I continue
+  #   Then I should see the phrase "You are eligible"
+  
+  # =============================================================================
+  # More test patterns available in test_examples/ directory
+  # Copy and customize patterns that match your interview structure
+  # =============================================================================

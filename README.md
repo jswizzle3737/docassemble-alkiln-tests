@@ -5,13 +5,14 @@ Automated testing environment for docassemble interviews using [ALKiln](https://
 ## ⚡ Quick Start (2 minutes)
 
 ### 1️⃣ Add GitHub Secrets
-1. Go to your repo → **Settings** → **Secrets and variables** → **Actions**
-2. Click **"New repository secret"** and add these two:
+1. Get your API key from your docassemble testing server (User menu → API keys)
+2. Go to your repo → **Settings** → **Secrets and variables** → **Actions**
+3. Click **"New repository secret"** and add these two:
 
-| Secret Name | Value |
-|---|---|
-| `SERVER_URL` | `https://docassemble-uugcj-u59651.vm.elestio.app:443/` |
-| `DOCASSEMBLE_DEVELOPER_API_KEY` | `1gcxf6lPnmwGVlqe2OHIPp2yAkCt25uy` |
+| Secret Name | Value | Example |
+|---|---|---|
+| `SERVER_URL` | Your testing server URL with `:443/` | `https://your-server.com:443/` |
+| `DOCASSEMBLE_DEVELOPER_API_KEY` | Your API key from docassemble | (copy from server) |
 
 ### 2️⃣ Create Your Test File
 Create `test_interviews.feature`:
@@ -38,6 +39,13 @@ Scenario: User completes interview
 .
 ├── .github/workflows/
 │   └── alkiln_tests.yml          ← GitHub Actions workflow (auto-triggered)
+├── test_examples/                ← 📁 Categorized test pattern examples
+│   ├── basic_tests.feature       ← Simple forms & navigation
+│   ├── conditional_logic_tests.feature  ← Branching logic
+│   ├── multi_page_tests.feature  ← Multi-step interviews
+│   ├── button_navigation_tests.feature  ← Button interactions
+│   ├── validation_tests.feature  ← Form validation & errors
+│   └── README.md                 ← Guide to using examples
 ├── docassemble/
 │   └── alkilntests/
 │       └── data/
@@ -45,13 +53,29 @@ Scenario: User completes interview
 │           ├── templates/         ← Document templates (optional)
 │           └── static/            ← CSS/JS/images (optional)
 ├── test_interviews.feature        ← Your Gherkin test scenarios
-├── setup.py                        ← Package configuration
-└── README.md                       ← This file
+├── setup.py                       ← Package configuration
+└── README.md                      ← This file
 ```
 
 ---
 
 ## 🧪 Writing Tests
+
+### Quick Start with Examples
+
+The `test_examples/` directory contains ready-to-use test patterns. Copy scenarios that match your interview structure:
+
+```bash
+# Browse categorized examples:
+test_examples/
+├── basic_tests.feature              # Simple forms, basic navigation
+├── conditional_logic_tests.feature  # If/then branches, eligibility
+├── multi_page_tests.feature         # Multi-step interviews
+├── button_navigation_tests.feature  # Button clicks, dynamic forms
+└── validation_tests.feature         # Required fields, error messages
+```
+
+See `test_examples/README.md` for detailed usage guide.
 
 ### Simple Tests
 ```gherkin
@@ -121,9 +145,11 @@ docker run -p 80:80 -p 443:443 jhpyle/docassemble
 ## 📖 Helpful Links
 
 - [ALKiln Documentation](https://assemblyline.suffolklitlab.org/docs/components/ALKiln/alkiln/) - Complete test reference
+- [Test Examples Guide](test_examples/README.md) - Categorized test patterns
 - [Docassemble YAML Syntax](https://docassemble.org/docs/interview.html) - Interview file syntax
 - [GitHub Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets) - How GitHub secrets work
 - [Gherkin/Cucumber Syntax](https://cucumber.io/docs/gherkin/) - Test syntax reference
+- [Contributing Guide](CONTRIBUTING.md) - How to contribute to this repository
 
 ---
 
