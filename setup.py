@@ -1,4 +1,5 @@
 from setuptools import setup, find_packages
+import os
 
 def find_package_data(where='.', package=''):
     """
@@ -20,15 +21,13 @@ def find_package_data(where='.', package=''):
                 out.setdefault(package, []).append(os.path.join(prefix, name))
     return out
 
-import os
-
 setup(
     name='docassemble.alkilntests',
     version='1.0.0',
-    description='ALKiln testing package',
+    description='ALKiln testing package for docassemble interviews',
     long_description='ALKiln testing package for docassemble interviews',
     long_description_content_type='text/markdown',
-    author='Your Name',
+    author='jswizzle3737',
     author_email='your.email@example.com',
     license='The MIT License (MIT)',
     url='https://github.com/jswizzle3737/docassemble-alkiln-tests',
