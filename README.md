@@ -2,6 +2,12 @@
 
 Automated testing environment for docassemble interviews using [ALKiln](https://assemblyline.suffolklitlab.org/docs/components/ALKiln/alkiln/).
 
+## 🚀 New Here? Start in 5 Minutes!
+
+**👉 [Follow the QUICK_START.md Guide](./QUICK_START.md)** - The simplest way to begin testing in GitHub!
+
+---
+
 ## ⚡ Quick Start (2 minutes)
 
 ### 1️⃣ Add GitHub Secrets
