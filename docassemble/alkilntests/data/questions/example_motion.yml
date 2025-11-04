@@ -1,0 +1,207 @@
+---
+# Example Assembly Line Motion Form
+# This demonstrates a complete Assembly Line interview
+---
+include:
+  - docassemble.AssemblyLine:assembly_line.yml
+---
+metadata:
+  title: Example Motion to Continue
+  short title: Motion
+  description: |
+    An example motion using the Assembly Line framework
+  authors:
+    - name: Your Name
+      organization: Your Organization
+---
+mandatory: True
+code: |
+  # Interview order control block
+  intro_screen
+  users[0].name.first
+  users[0].address.address
+  other_parties[0].name.first
+  trial_court
+  docket_number
+  motion_reason
+  signature_date
+  download_screen
+---
+objects:
+  - users: ALPeopleList.using(ask_number=True, target_number=1)
+  - other_parties: ALPeopleList.using(ask_number=True, target_number=1)
+---
+question: |
+  Motion to Continue Hearing
+subquestion: |
+  This interview will help you create a motion to continue a court hearing.
+
+  You will need:
+
+  * Your name and address
+  * The other party's name
+  * Your case number (docket number)
+  * The reason for the continuance
+
+  This will take about 5 minutes.
+continue button field: intro_screen
+---
+question: |
+  What is your name?
+fields:
+  - First name: users[0].name.first
+  - Middle name: users[0].name.middle
+    required: False
+  - Last name: users[0].name.last
+  - Suffix: users[0].name.suffix
+    required: False
+    code: name_suffix()
+---
+question: |
+  What is your address?
+subquestion: |
+  The court needs your current address.
+fields:
+  - Street address: users[0].address.address
+    address autocomplete: True
+  - Unit/Apt: users[0].address.unit
+    required: False
+  - City: users[0].address.city
+  - State: users[0].address.state
+    code: states_list()
+    default: MA
+  - Zip code: users[0].address.zip
+---
+question: |
+  What is your phone number?
+fields:
+  - Phone: users[0].phone_number
+    datatype: al_international_phone
+---
+question: |
+  What is your email address?
+subquestion: |
+  The court may use this to contact you.
+fields:
+  - Email: users[0].email
+    datatype: email
+---
+question: |
+  Who is the other party in this case?
+subquestion: |
+  This is the person on the other side of your case.
+fields:
+  - First name: other_parties[0].name.first
+  - Middle name: other_parties[0].name.middle
+    required: False
+  - Last name: other_parties[0].name.last
+  - Suffix: other_parties[0].name.suffix
+    required: False
+    code: name_suffix()
+---
+question: |
+  What court is your case in?
+subquestion: |
+  Select the trial court where your case is being heard.
+fields:
+  - Court name: trial_court
+    datatype: object
+    choices: all_courts
+    # For testing, you can use a simple text field instead:
+    # datatype: text
+---
+question: |
+  What is your docket number?
+subquestion: |
+  This is your case number. You can find it on any court papers you have received.
+
+  It might look like: **2023-CV-12345**
+fields:
+  - Docket number: docket_number
+    hint: e.g., 2023-CV-12345
+---
+question: |
+  Why do you need to continue the hearing?
+subquestion: |
+  Explain the reason you need more time. Be specific and honest.
+fields:
+  - Reason for continuance: motion_reason
+    datatype: area
+    rows: 6
+    hint: |
+      Example: I need more time to gather evidence and prepare my case.
+---
+question: |
+  Sign your name
+subquestion: |
+  Sign by touching your screen or using your mouse.
+signature: users[0].signature
+under: |
+  ${ users[0].name.full() }
+---
+code: |
+  # Set signature date
+  signature_date = today()
+---
+event: download_screen
+question: |
+  Your Motion to Continue is ready
+subquestion: |
+  Thank you, **${ users[0].name.full() }**.
+
+  Your motion to continue the hearing has been prepared.
+
+  ## Next steps
+
+  1. Download your motion using the button below
+  2. Review it carefully
+  3. Make copies (original + one for each party)
+  4. File it with the court
+  5. Serve a copy on **${ other_parties[0].name.full() }**
+
+  ## Case Information
+
+  * **Court:** ${ trial_court }
+  * **Docket Number:** ${ docket_number }
+  * **Other Party:** ${ other_parties[0].name.full() }
+  * **Date Signed:** ${ format_date(signature_date, format='long') }
+
+  ---
+
+  ### Download your document
+
+  ${ al_user_bundle.download_list_html() }
+
+  ---
+
+  ${ al_user_bundle.send_button_html(show_editable_checkbox=False) }
+
+buttons:
+  - Restart: restart
+  - Exit: exit
+---
+objects:
+  - al_user_bundle: ALDocumentBundle.using(
+      elements=[motion_to_continue_attachment],
+      filename="motion_to_continue",
+      title="Motion to Continue"
+    )
+---
+objects:
+  - motion_to_continue_attachment: ALDocument.using(
+      title="Motion to Continue",
+      filename="motion_to_continue",
+      enabled=True
+    )
+---
+attachment:
+  name: Motion to Continue
+  filename: motion_to_continue
+  variable name: motion_to_continue_attachment[i]
+  docx template file: motion_to_continue.docx
+---
+# Note: You would need to create the DOCX template file at:
+# docassemble/alkilntests/data/templates/motion_to_continue.docx
+#
+# For now, this will generate a simple text version
+---
