@@ -34,7 +34,9 @@ setup(
     url='https://github.com/jswizzle3737/docassemble-alkiln-tests',
     packages=find_packages(),
     namespace_packages=['docassemble'],
-    install_requires=[],
+    install_requires=[
+        'pymupdf>=1.23.0',
+    ],
     zip_safe=False,
     package_data=find_package_data(where='docassemble/alkilntests/', package='docassemble.alkilntests'),
 )

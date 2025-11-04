@@ -1,0 +1,224 @@
+---
+# ====================================================================================
+#  Docassemble Interview YAML File
+#  Generated automatically by the PDF Question Extractor
+#
+#  PDF Source: L7.pdf
+#  Generated on: 2025-11-03
+#
+#  This file is a starting point. You will likely need to adjust the field
+#  placements in the Docassemble playground's "Template" editor.
+# ====================================================================================
+
+metadata:
+  title: "Interview for L7"
+  description: An interactive web form to fill out the L7.pdf document.
+  authors:
+    - name: PDF Question Extractor AI
+---
+# This block links your interview questions (variables) to the fillable fields
+# in your PDF template. You must upload L7.pdf to your 'Templates' folder.
+#
+# For more info: https://docassemble.org/docs/pdfform.html#pdftemplate
+template: L7.pdf
+fields:
+  - "rentalUnitAddress": rentalUnitAddress
+  - "landlordFullName": landlordFullName
+  - "landlordCompanyName": landlordCompanyName
+  - "landlordMailingAddress": landlordMailingAddress
+  - "landlordDayPhoneNumber": landlordDayPhoneNumber
+  - "landlordEveningPhoneNumber": landlordEveningPhoneNumber
+  - "landlordFaxNumber": landlordFaxNumber
+  - "landlordEmailAddress": landlordEmailAddress
+  - "tenantFullName": tenantFullName
+  - "tenantMailingAddress": tenantMailingAddress
+  - "tenantDayPhoneNumber": tenantDayPhoneNumber
+  - "tenantEveningPhoneNumber": tenantEveningPhoneNumber
+  - "tenantFaxNumber": tenantFaxNumber
+  - "tenantEmailAddress": tenantEmailAddress
+  - "tenantRepresentativeFullName": tenantRepresentativeFullName
+  - "tenantRepresentativeStreetAddress": tenantRepresentativeStreetAddress
+  - "tenantRepresentativeDayPhoneNumber": tenantRepresentativeDayPhoneNumber
+  - "tenantRepresentativeEveningPhoneNumber": tenantRepresentativeEveningPhoneNumber
+  - "tenantRepresentativeFaxNumber": tenantRepresentativeFaxNumber
+  - "tenantRepresentativeEmailAddress": tenantRepresentativeEmailAddress
+  - "relatedApplicationFileNumber1": relatedApplicationFileNumber1
+  - "relatedApplicationFileNumber2": relatedApplicationFileNumber2
+  - "reason1TenantDoesNotRequireAsMuchCare": reason1TenantDoesNotRequireAsMuchCare
+  - "reason1Explanation": reason1Explanation
+  - "reason2TenantRequiresHigherCare": reason2TenantRequiresHigherCare
+  - "reason2Explanation": reason2Explanation
+  - "otherAccommodationAvailableYes": otherAccommodationAvailableYes
+  - "otherAccommodationAvailableNo": otherAccommodationAvailableNo
+  - "otherAccommodationExplanation": otherAccommodationExplanation
+  - "landlordOrRepresentativeSignature": landlordOrRepresentativeSignature
+  - "landlordOrRepresentativeSignatureDate": landlordOrRepresentativeSignatureDate
+  - "signedByLandlord": signedByLandlord
+  - "signedByLegalRepresentative": signedByLegalRepresentative
+  - "legalRepresentativeFullName": legalRepresentativeFullName
+  - "legalRepresentativeLSUCNumber": legalRepresentativeLSUCNumber
+  - "legalRepresentativeCompanyName": legalRepresentativeCompanyName
+  - "legalRepresentativeMailingAddress": legalRepresentativeMailingAddress
+  - "legalRepresentativeDayPhoneNumber": legalRepresentativeDayPhoneNumber
+  - "legalRepresentativeEveningPhoneNumber": legalRepresentativeEveningPhoneNumber
+  - "legalRepresentativeFaxNumber": legalRepresentativeFaxNumber
+  - "legalRepresentativeEmailAddress": legalRepresentativeEmailAddress
+  - "requestFrenchLanguageDisputeResolution": requestFrenchLanguageDisputeResolution
+  - "requestAccommodationUnderHumanRightsCode": requestAccommodationUnderHumanRightsCode
+  - "accommodationNeededExplanation": accommodationNeededExplanation
+  - "payByOnlinePayment": payByOnlinePayment
+  - "onlinePaymentReceiptNumber": onlinePaymentReceiptNumber
+  - "payByMoneyOrder": payByMoneyOrder
+  - "payByCertifiedCheque": payByCertifiedCheque
+  - "payByCreditCard": payByCreditCard
+---
+# This is the main interview block. It defines the questions that will be asked
+# to the user. All questions are mandatory by default.
+#
+# For more complex logic (like showing/hiding questions conditionally),
+# see: https://docassemble.org/docs/logic.html
+mandatory: True
+question: |
+  Please fill out the information for your document.
+fields:
+  - "What is the address of the rental unit covered by this application?": rentalUnitAddress
+    datatype: address
+  - "What is the landlord's full name?": landlordFullName
+  - "What is the landlord's company name (if applicable)?": landlordCompanyName
+  - "What is the landlord's mailing address?": landlordMailingAddress
+    datatype: address
+  - "What is the landlord's day phone number?": landlordDayPhoneNumber
+  - "What is the landlord's evening phone number?": landlordEveningPhoneNumber
+  - "What is the landlord's fax number?": landlordFaxNumber
+  - "What is the landlord's email address?": landlordEmailAddress
+    datatype: email
+  - "What is the tenant's full name?": tenantFullName
+  - "What is the tenant's mailing address (if different from the rental unit)?": tenantMailingAddress
+    datatype: address
+  - "What is the tenant's day phone number?": tenantDayPhoneNumber
+  - "What is the tenant's evening phone number?": tenantEveningPhoneNumber
+  - "What is the tenant's fax number?": tenantFaxNumber
+  - "What is the tenant's email address?": tenantEmailAddress
+    datatype: email
+  - "What is the tenant's representative's or substitute decision maker's full name?": tenantRepresentativeFullName
+  - "What is the tenant's representative's or substitute decision maker's street address?": tenantRepresentativeStreetAddress
+    datatype: address
+  - "What is the tenant's representative's or substitute decision maker's day phone number?": tenantRepresentativeDayPhoneNumber
+  - "What is the tenant's representative's or substitute decision maker's evening phone number?": tenantRepresentativeEveningPhoneNumber
+  - "What is the tenant's representative's or substitute decision maker's fax number?": tenantRepresentativeFaxNumber
+  - "What is the tenant's representative's or substitute decision maker's email address?": tenantRepresentativeEmailAddress
+    datatype: email
+  - "What is the file number for related application 1?": relatedApplicationFileNumber1
+  - "What is the file number for related application 2?": relatedApplicationFileNumber2
+  - "Reason 1: The tenant does not require as much care as the care home provides.": reason1TenantDoesNotRequireAsMuchCare
+    datatype: yesno
+  - "Please explain why the tenant does not require as much care as the care home provides (be as specific as possible).": reason1Explanation
+    datatype: area
+  - "Reason 2: The tenant requires a higher level of care than the care home can provide, even with additional care services available from service providers in the community.": reason2TenantRequiresHigherCare
+    datatype: yesno
+  - "Please explain why the tenant requires a higher level of care (be as specific as possible).": reason2Explanation
+    datatype: area
+  - "Is other appropriate accommodation available for the tenant at this time? (Yes)": otherAccommodationAvailableYes
+    datatype: yesno
+  - "Is other appropriate accommodation available for the tenant at this time? (No)": otherAccommodationAvailableNo
+    datatype: yesno
+  - "Please explain if other appropriate accommodation is available (be as specific as possible).": otherAccommodationExplanation
+    datatype: area
+  - "Landlord/Representative's Signature": landlordOrRepresentativeSignature
+    datatype: signature
+  - "Date of signature (dd/mm/yyyy)": landlordOrRepresentativeSignatureDate
+    datatype: date
+  - "Who has signed the application? (Landlord)": signedByLandlord
+    datatype: yesno
+  - "Who has signed the application? (Legal Representative)": signedByLegalRepresentative
+    datatype: yesno
+  - "What is the legal representative's full name?": legalRepresentativeFullName
+  - "What is the legal representative's LSUC #?": legalRepresentativeLSUCNumber
+  - "What is the legal representative's company name (if applicable)?": legalRepresentativeCompanyName
+  - "What is the legal representative's mailing address?": legalRepresentativeMailingAddress
+    datatype: address
+  - "What is the legal representative's day phone number?": legalRepresentativeDayPhoneNumber
+  - "What is the legal representative's evening phone number?": legalRepresentativeEveningPhoneNumber
+  - "What is the legal representative's fax number?": legalRepresentativeFaxNumber
+  - "What is the legal representative's email address?": legalRepresentativeEmailAddress
+    datatype: email
+  - "Do you want the dispute resolution process (e.g. case conferences and hearings) to be conducted in French?": requestFrenchLanguageDisputeResolution
+    datatype: yesno
+  - "Do you need accommodation under the Ontario Human Rights Code to participate in the dispute resolution process?": requestAccommodationUnderHumanRightsCode
+    datatype: yesno
+  - "Please explain what accommodation you need.": accommodationNeededExplanation
+    datatype: area
+  - "Are you paying the application fee by Online Payment?": payByOnlinePayment
+    datatype: yesno
+  - "If paying by Online Payment, what is the Receipt #?": onlinePaymentReceiptNumber
+  - "Are you paying the application fee by Money Order?": payByMoneyOrder
+    datatype: yesno
+  - "Are you paying the application fee by Certified Cheque?": payByCertifiedCheque
+    datatype: yesno
+  - "Are you paying the application fee by Credit Card?": payByCreditCard
+    datatype: yesno
+
+---
+# This block generates the final, filled PDF for the user to download.
+# It uses the variables collected from the interview questions.
+mandatory: True
+question: |
+  Your document, "L7", is ready to be downloaded.
+attachment:
+  name: "Completed L7"
+  filename: "L7_completed"
+  pdf_template_file: L7.pdf
+  fields:
+    rentalUnitAddress: ${rentalUnitAddress}
+    landlordFullName: ${landlordFullName}
+    landlordCompanyName: ${landlordCompanyName}
+    landlordMailingAddress: ${landlordMailingAddress}
+    landlordDayPhoneNumber: ${landlordDayPhoneNumber}
+    landlordEveningPhoneNumber: ${landlordEveningPhoneNumber}
+    landlordFaxNumber: ${landlordFaxNumber}
+    landlordEmailAddress: ${landlordEmailAddress}
+    tenantFullName: ${tenantFullName}
+    tenantMailingAddress: ${tenantMailingAddress}
+    tenantDayPhoneNumber: ${tenantDayPhoneNumber}
+    tenantEveningPhoneNumber: ${tenantEveningPhoneNumber}
+    tenantFaxNumber: ${tenantFaxNumber}
+    tenantEmailAddress: ${tenantEmailAddress}
+    tenantRepresentativeFullName: ${tenantRepresentativeFullName}
+    tenantRepresentativeStreetAddress: ${tenantRepresentativeStreetAddress}
+    tenantRepresentativeDayPhoneNumber: ${tenantRepresentativeDayPhoneNumber}
+    tenantRepresentativeEveningPhoneNumber: ${tenantRepresentativeEveningPhoneNumber}
+    tenantRepresentativeFaxNumber: ${tenantRepresentativeFaxNumber}
+    tenantRepresentativeEmailAddress: ${tenantRepresentativeEmailAddress}
+    relatedApplicationFileNumber1: ${relatedApplicationFileNumber1}
+    relatedApplicationFileNumber2: ${relatedApplicationFileNumber2}
+    reason1TenantDoesNotRequireAsMuchCare: ${reason1TenantDoesNotRequireAsMuchCare}
+    reason1Explanation: ${reason1Explanation}
+    reason2TenantRequiresHigherCare: ${reason2TenantRequiresHigherCare}
+    reason2Explanation: ${reason2Explanation}
+    otherAccommodationAvailableYes: ${otherAccommodationAvailableYes}
+    otherAccommodationAvailableNo: ${otherAccommodationAvailableNo}
+    otherAccommodationExplanation: ${otherAccommodationExplanation}
+    landlordOrRepresentativeSignature: ${landlordOrRepresentativeSignature}
+    landlordOrRepresentativeSignatureDate: ${landlordOrRepresentativeSignatureDate}
+    signedByLandlord: ${signedByLandlord}
+    signedByLegalRepresentative: ${signedByLegalRepresentative}
+    legalRepresentativeFullName: ${legalRepresentativeFullName}
+    legalRepresentativeLSUCNumber: ${legalRepresentativeLSUCNumber}
+    legalRepresentativeCompanyName: ${legalRepresentativeCompanyName}
+    legalRepresentativeMailingAddress: ${legalRepresentativeMailingAddress}
+    legalRepresentativeDayPhoneNumber: ${legalRepresentativeDayPhoneNumber}
+    legalRepresentativeEveningPhoneNumber: ${legalRepresentativeEveningPhoneNumber}
+    legalRepresentativeFaxNumber: ${legalRepresentativeFaxNumber}
+    legalRepresentativeEmailAddress: ${legalRepresentativeEmailAddress}
+    requestFrenchLanguageDisputeResolution: ${requestFrenchLanguageDisputeResolution}
+    requestAccommodationUnderHumanRightsCode: ${requestAccommodationUnderHumanRightsCode}
+    accommodationNeededExplanation: ${accommodationNeededExplanation}
+    payByOnlinePayment: ${payByOnlinePayment}
+    onlinePaymentReceiptNumber: ${onlinePaymentReceiptNumber}
+    payByMoneyOrder: ${payByMoneyOrder}
+    payByCertifiedCheque: ${payByCertifiedCheque}
+    payByCreditCard: ${payByCreditCard}
+...
+# ====================================================================================
+#  End of generated file.
+# ====================================================================================

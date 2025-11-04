@@ -1,0 +1,220 @@
+---
+# ====================================================================================
+#  Docassemble Interview YAML File
+#  Generated automatically by the PDF Question Extractor
+#
+#  PDF Source: A1.pdf
+#  Generated on: 2025-11-03
+#
+#  This file is a starting point. You will likely need to adjust the field
+#  placements in the Docassemble playground's "Template" editor.
+# ====================================================================================
+
+metadata:
+  title: "Interview for A1"
+  description: An interactive web form to fill out the A1.pdf document.
+  authors:
+    - name: PDF Question Extractor AI
+---
+# This block links your interview questions (variables) to the fillable fields
+# in your PDF template. You must upload A1.pdf to your 'Templates' folder.
+#
+# For more info: https://docassemble.org/docs/pdfform.html#pdftemplate
+template: A1.pdf
+fields:
+  - "applicantIsLandlord": applicantIsLandlord
+  - "applicantIsTenant": applicantIsTenant
+  - "applicantFirstName": applicantFirstName
+  - "applicantLastName": applicantLastName
+  - "applicantCompanyName": applicantCompanyName
+  - "applicantAddress": applicantAddress
+  - "applicantDayPhoneNumber": applicantDayPhoneNumber
+  - "applicantEveningPhoneNumber": applicantEveningPhoneNumber
+  - "applicantFaxNumber": applicantFaxNumber
+  - "applicantEmailAddress": applicantEmailAddress
+  - "rentalUnitAddress": rentalUnitAddress
+  - "otherPartyIsLandlord": otherPartyIsLandlord
+  - "otherPartyIsTenant": otherPartyIsTenant
+  - "otherPartyFirstName": otherPartyFirstName
+  - "otherPartyLastName": otherPartyLastName
+  - "otherPartyCompanyName": otherPartyCompanyName
+  - "otherPartyAddress": otherPartyAddress
+  - "otherPartyDayPhoneNumber": otherPartyDayPhoneNumber
+  - "otherPartyEveningPhoneNumber": otherPartyEveningPhoneNumber
+  - "otherPartyFaxNumber": otherPartyFaxNumber
+  - "otherPartyEmailAddress": otherPartyEmailAddress
+  - "relatedApplicationFileNumber1": relatedApplicationFileNumber1
+  - "relatedApplicationFileNumber2": relatedApplicationFileNumber2
+  - "premisesExplanation": premisesExplanation
+  - "totalRentalUnitsInComplex": totalRentalUnitsInComplex
+  - "rentalUnitsCoveredByApplication": rentalUnitsCoveredByApplication
+  - "applicantSignature": applicantSignature
+  - "signatureDate": signatureDate
+  - "signedByLandlord": signedByLandlord
+  - "signedByTenant": signedByTenant
+  - "signedByRepresentative": signedByRepresentative
+  - "representativeFirstName": representativeFirstName
+  - "representativeLastName": representativeLastName
+  - "representativeLsucNumber": representativeLsucNumber
+  - "representativeCompanyName": representativeCompanyName
+  - "representativeMailingAddress": representativeMailingAddress
+  - "representativeDayPhoneNumber": representativeDayPhoneNumber
+  - "representativeEveningPhoneNumber": representativeEveningPhoneNumber
+  - "representativeFaxNumber": representativeFaxNumber
+  - "representativeEmailAddress": representativeEmailAddress
+  - "disputeResolutionInFrench": disputeResolutionInFrench
+  - "needAccommodation": needAccommodation
+  - "accommodationExplanation": accommodationExplanation
+  - "payByOnlinePayment": payByOnlinePayment
+  - "onlinePaymentReceiptNumber": onlinePaymentReceiptNumber
+  - "payByMoneyOrder": payByMoneyOrder
+  - "payByCertifiedCheque": payByCertifiedCheque
+  - "payByCreditCard": payByCreditCard
+---
+# This is the main interview block. It defines the questions that will be asked
+# to the user. All questions are mandatory by default.
+#
+# For more complex logic (like showing/hiding questions conditionally),
+# see: https://docassemble.org/docs/logic.html
+mandatory: True
+question: |
+  Please fill out the information for your document.
+fields:
+  - "Are you the Landlord?": applicantIsLandlord
+    datatype: yesno
+  - "Are you the Tenant?": applicantIsTenant
+    datatype: yesno
+  - "Applicant's First Name": applicantFirstName
+  - "Applicant's Last Name": applicantLastName
+  - "Applicant's Company Name (if applicable)": applicantCompanyName
+  - "Applicant's Address": applicantAddress
+    datatype: address
+  - "Applicant's Day Phone Number": applicantDayPhoneNumber
+  - "Applicant's Evening Phone Number": applicantEveningPhoneNumber
+  - "Applicant's Fax Number": applicantFaxNumber
+  - "Applicant's E-mail Address": applicantEmailAddress
+    datatype: email
+  - "Address of the Rental Unit": rentalUnitAddress
+    datatype: address
+  - "Is the other party a Landlord?": otherPartyIsLandlord
+    datatype: yesno
+  - "Is the other party a Tenant?": otherPartyIsTenant
+    datatype: yesno
+  - "Other Party's First Name": otherPartyFirstName
+  - "Other Party's Last Name": otherPartyLastName
+  - "Other Party's Company Name (if applicable)": otherPartyCompanyName
+  - "Other Party's Address": otherPartyAddress
+    datatype: address
+  - "Other Party's Day Phone Number": otherPartyDayPhoneNumber
+  - "Other Party's Evening Phone Number": otherPartyEveningPhoneNumber
+  - "Other Party's Fax Number": otherPartyFaxNumber
+  - "Other Party's E-mail Address": otherPartyEmailAddress
+    datatype: email
+  - "Related Application File Number 1": relatedApplicationFileNumber1
+  - "Related Application File Number 2": relatedApplicationFileNumber2
+  - "Describe the premises and explain why you think it is covered or not covered by the Residential Tenancies Act.": premisesExplanation
+    datatype: area
+  - "Total number of rental units in the complex": totalRentalUnitsInComplex
+    datatype: number
+  - "Number of rental units covered by this application": rentalUnitsCoveredByApplication
+    datatype: number
+  - "Landlord/Tenant/Representative's Signature": applicantSignature
+    datatype: signature
+  - "Date of Signature": signatureDate
+    datatype: date
+  - "Was the application signed by the Landlord?": signedByLandlord
+    datatype: yesno
+  - "Was the application signed by the Tenant?": signedByTenant
+    datatype: yesno
+  - "Was the application signed by a Representative?": signedByRepresentative
+    datatype: yesno
+  - "Representative's First Name": representativeFirstName
+  - "Representative's Last Name": representativeLastName
+  - "Representative's LSUC Number": representativeLsucNumber
+  - "Representative's Company Name (if applicable)": representativeCompanyName
+  - "Representative's Mailing Address": representativeMailingAddress
+    datatype: address
+  - "Representative's Day Phone Number": representativeDayPhoneNumber
+  - "Representative's Evening Phone Number": representativeEveningPhoneNumber
+  - "Representative's Fax Number": representativeFaxNumber
+  - "Representative's E-mail Address": representativeEmailAddress
+    datatype: email
+  - "Do you want the dispute resolution process to be conducted in French?": disputeResolutionInFrench
+    datatype: yesno
+  - "Do you need accommodation under the Ontario Human Rights Code?": needAccommodation
+    datatype: yesno
+  - "Explain what accommodation you need": accommodationExplanation
+    datatype: area
+  - "Are you paying the application fee by Online Payment?": payByOnlinePayment
+    datatype: yesno
+  - "Online Payment Receipt Number": onlinePaymentReceiptNumber
+  - "Are you paying the application fee by Money Order?": payByMoneyOrder
+    datatype: yesno
+  - "Are you paying the application fee by Certified Cheque?": payByCertifiedCheque
+    datatype: yesno
+  - "Are you paying the application fee by Credit Card?": payByCreditCard
+    datatype: yesno
+
+---
+# This block generates the final, filled PDF for the user to download.
+# It uses the variables collected from the interview questions.
+mandatory: True
+question: |
+  Your document, "A1", is ready to be downloaded.
+attachment:
+  name: "Completed A1"
+  filename: "A1_completed"
+  pdf_template_file: A1.pdf
+  fields:
+    applicantIsLandlord: ${applicantIsLandlord}
+    applicantIsTenant: ${applicantIsTenant}
+    applicantFirstName: ${applicantFirstName}
+    applicantLastName: ${applicantLastName}
+    applicantCompanyName: ${applicantCompanyName}
+    applicantAddress: ${applicantAddress}
+    applicantDayPhoneNumber: ${applicantDayPhoneNumber}
+    applicantEveningPhoneNumber: ${applicantEveningPhoneNumber}
+    applicantFaxNumber: ${applicantFaxNumber}
+    applicantEmailAddress: ${applicantEmailAddress}
+    rentalUnitAddress: ${rentalUnitAddress}
+    otherPartyIsLandlord: ${otherPartyIsLandlord}
+    otherPartyIsTenant: ${otherPartyIsTenant}
+    otherPartyFirstName: ${otherPartyFirstName}
+    otherPartyLastName: ${otherPartyLastName}
+    otherPartyCompanyName: ${otherPartyCompanyName}
+    otherPartyAddress: ${otherPartyAddress}
+    otherPartyDayPhoneNumber: ${otherPartyDayPhoneNumber}
+    otherPartyEveningPhoneNumber: ${otherPartyEveningPhoneNumber}
+    otherPartyFaxNumber: ${otherPartyFaxNumber}
+    otherPartyEmailAddress: ${otherPartyEmailAddress}
+    relatedApplicationFileNumber1: ${relatedApplicationFileNumber1}
+    relatedApplicationFileNumber2: ${relatedApplicationFileNumber2}
+    premisesExplanation: ${premisesExplanation}
+    totalRentalUnitsInComplex: ${totalRentalUnitsInComplex}
+    rentalUnitsCoveredByApplication: ${rentalUnitsCoveredByApplication}
+    applicantSignature: ${applicantSignature}
+    signatureDate: ${signatureDate}
+    signedByLandlord: ${signedByLandlord}
+    signedByTenant: ${signedByTenant}
+    signedByRepresentative: ${signedByRepresentative}
+    representativeFirstName: ${representativeFirstName}
+    representativeLastName: ${representativeLastName}
+    representativeLsucNumber: ${representativeLsucNumber}
+    representativeCompanyName: ${representativeCompanyName}
+    representativeMailingAddress: ${representativeMailingAddress}
+    representativeDayPhoneNumber: ${representativeDayPhoneNumber}
+    representativeEveningPhoneNumber: ${representativeEveningPhoneNumber}
+    representativeFaxNumber: ${representativeFaxNumber}
+    representativeEmailAddress: ${representativeEmailAddress}
+    disputeResolutionInFrench: ${disputeResolutionInFrench}
+    needAccommodation: ${needAccommodation}
+    accommodationExplanation: ${accommodationExplanation}
+    payByOnlinePayment: ${payByOnlinePayment}
+    onlinePaymentReceiptNumber: ${onlinePaymentReceiptNumber}
+    payByMoneyOrder: ${payByMoneyOrder}
+    payByCertifiedCheque: ${payByCertifiedCheque}
+    payByCreditCard: ${payByCreditCard}
+...
+# ====================================================================================
+#  End of generated file.
+# ====================================================================================

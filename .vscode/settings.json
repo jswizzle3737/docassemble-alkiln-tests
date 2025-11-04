@@ -7,7 +7,6 @@
   "python.linting.flake8Enabled": true,
   "python.testing.unittestEnabled": true,
   "python.testing.pytestEnabled": false,
-
   // Cucumber/Gherkin settings
   "cucumberautocomplete.steps": [
     "docassemble/alkilntests/data/sources/*.feature",
@@ -23,23 +22,22 @@
       "value": "\"([^\"]*)\""
     }
   ],
-
   // File associations
   "files.associations": {
     "*.feature": "cucumber",
     "*.yml": "yaml",
     "*.yaml": "yaml"
   },
-
   // Editor settings
   "editor.formatOnSave": true,
-  "editor.rulers": [88],
+  "editor.rulers": [
+    88
+  ],
   "editor.quickSuggestions": {
     "comments": false,
     "strings": true,
     "other": true
   },
-
   // Format settings per language
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
@@ -64,7 +62,6 @@
     "editor.defaultFormatter": "yzhang.markdown-all-in-one",
     "editor.tabSize": 2
   },
-
   // Spell checker configuration
   "cSpell.words": [
     "ALKiln",
@@ -79,7 +76,6 @@
     "pyproject",
     "jswizzle"
   ],
-
   // File exclusions
   "files.exclude": {
     "**/.git": true,
@@ -90,7 +86,6 @@
     "**/.venv": true,
     "**/node_modules": true
   },
-
   // Search exclusions
   "search.exclude": {
     "**/node_modules": true,
@@ -99,12 +94,13 @@
     "**/__pycache__": true,
     "**/.venv": true
   },
-
   // Git settings
   "git.ignoreLimitWarning": true,
-
   // YAML schema association
   "yaml.schemas": {
     "https://json.schemastore.org/github-workflow.json": ".github/workflows/*.yml"
-  }
+  },
+  "terminal.integrated.accessibleViewFocusOnCommandExecution": true,
+  "terminal.integrated.accessibleViewPreserveCursorPosition": true,
+  "terminal.integrated.automationProfile.linux": {}
 }
