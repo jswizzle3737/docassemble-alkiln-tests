@@ -20,6 +20,8 @@ code: |
   intro_screen
   users[0].name.first
   users[0].address.address
+  users[0].phone_number
+  users[0].email
   other_parties[0].name.first
   trial_court
   docket_number
@@ -102,13 +104,10 @@ fields:
 question: |
   What court is your case in?
 subquestion: |
-  Select the trial court where your case is being heard.
+  Enter the name of the trial court where your case is being heard.
 fields:
   - Court name: trial_court
-    datatype: object
-    choices: all_courts
-    # For testing, you can use a simple text field instead:
-    # datatype: text
+    hint: e.g., Boston Municipal Court
 ---
 question: |
   What is your docket number?

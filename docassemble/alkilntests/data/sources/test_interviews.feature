@@ -4,7 +4,7 @@ Feature: Interview Tests
 Scenario: Test interview completes successfully
   Given I start the interview at "test"
   And I continue
-  Then I should see the phrase "Thank you for testing"
+  Then I should see the phrase "Thank you for testing!"
 
 # If the above fails, try these alternatives:
 # Scenario: Basic connection test  
