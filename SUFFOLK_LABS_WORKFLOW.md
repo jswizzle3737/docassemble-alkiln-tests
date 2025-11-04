@@ -276,17 +276,18 @@ objects:
 
 Make sure these are configured:
 
-| Secret | Value | Purpose |
-|--------|-------|---------|
-| `SERVER_URL` | https://docassemble-uugcj-u59651.vm.elestio.app:443/ | Server address |
-| `DOCASSEMBLE_DEVELOPER_API_KEY` | qbBmYExaEQPNxkHyAIH6gOV2zMF9ON3m | API authentication |
-| `PROJECT_NAME` | alkilntests | Playground project name |
+| Secret | Purpose |
+|--------|---------|
+| `SERVER_URL` | Your docassemble server address |
+| `DOCASSEMBLE_DEVELOPER_API_KEY` | API authentication for deployment |
 
 **To add more secrets:**
 1. Go to: https://github.com/jswizzle3737/docassemble-alkiln-tests/settings/secrets/actions
 2. Click "New repository secret"
 3. Add name and value
 4. Click "Add secret"
+
+**Note:** The project name (`alkilntests`) is configured directly in the workflow.
 
 ---
 

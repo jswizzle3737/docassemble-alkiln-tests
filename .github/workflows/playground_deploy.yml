@@ -22,7 +22,7 @@ jobs:
         with:
           SERVER_URL: ${{ secrets.SERVER_URL }}
           DOCASSEMBLE_DEVELOPER_API_KEY: ${{ secrets.DOCASSEMBLE_DEVELOPER_API_KEY }}
-          PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
+          PROJECT_NAME: alkilntests
 
       - name: Deployment Summary
         run: |
@@ -31,6 +31,6 @@ jobs:
           echo "Your package has been deployed to the playground." >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Server:** ${{ secrets.SERVER_URL }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Project:** ${{ secrets.PROJECT_NAME }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Project:** alkilntests" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "Go to your docassemble Playground to test the changes!" >> $GITHUB_STEP_SUMMARY
