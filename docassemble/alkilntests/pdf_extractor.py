@@ -1,8 +1,9 @@
 """
 PDF Field Extractor for Docassemble Interviews
 
-This module uses PyMuPDF Pro to extract form fields from PDF documents
-and generate docassemble interview YAML files.
+This module uses PyMuPDF to extract form fields from PDF documents
+and generate docassemble interview YAML files. PyMuPDF Pro features
+are optional and will be used if available.
 
 Usage:
     python -m docassemble.alkilntests.pdf_extractor input.pdf output.yml
@@ -11,7 +12,7 @@ Usage:
 import os
 import sys
 from datetime import datetime
-from typing import Dict, List, Optional
+from typing import Any, Dict, List, Optional
 
 try:
     import pymupdf
@@ -29,7 +30,10 @@ except ImportError:
 
 
 class PDFFieldExtractor:
-    """Extract form fields from PDF documents using PyMuPDF Pro."""
+    """Extract form fields from PDF documents using PyMuPDF.
+    
+    PyMuPDF Pro features are optional and will be used if available.
+    """
 
     def __init__(self, pdf_path: str):
         """
@@ -78,7 +82,7 @@ class PDFFieldExtractor:
             print(f"✗ Error opening PDF: {e}")
             return False
 
-    def extract_fields(self) -> List[Dict[str, any]]:
+    def extract_fields(self) -> List[Dict[str, Any]]:
         """
         Extract form fields from the PDF.
 
