@@ -2,9 +2,9 @@
 
 Automated testing environment for docassemble interviews using [ALKiln](https://assemblyline.suffolklitlab.org/docs/components/ALKiln/alkiln/).
 
-## 🚀 New Here? Start in 5 Minutes!
+## 🚀 New Here? Get Started!
 
-**👉 [Follow the QUICK_START.md Guide](./QUICK_START.md)** - The simplest way to begin testing in GitHub!
+**👉 [Follow the DEPLOYMENT_CHECKLIST.md](./DEPLOYMENT_CHECKLIST.md)** - Complete deployment guide with Suffolk LIT Lab Assembly Line workflow!
 
 ---
 

@@ -1,63 +1,126 @@
 # Copilot Instructions for docassemble-alkiln-tests
 
 ## Project Overview
-This repository is set up for testing docassemble interviews using the ALKiln testing framework. It's a specialized end-to-end testing environment for legal document automation interviews.
+Suffolk LIT Lab Assembly Line project for building and testing docassemble court form interviews with automated CI/CD deployment.
 
 ## Architecture & Key Components
 
-### ALKiln Testing Framework
-- **Primary test file**: `test_interviews.feature` - Uses Gherkin syntax for behavior-driven testing
-- **GitHub Actions**: `.github/workflows/alkiln_tests.yml` - Automated testing on pushes/PRs using SuffolkLITLab/ALKiln@v5
-- **Target**: Tests actual docassemble interview YAML files on a remote server
+### Suffolk LIT Lab Assembly Line
+- **Framework**: Assembly Line v4.2.0 for court form automation
+- **Testing**: ALKiln framework (Gherkin/Cucumber) for end-to-end tests
+- **CI/CD**: SuffolkLITLab/ALActions for automated builds and deployment
+- **Development**: VS Code with Cucumber, Python, and YAML support
+
+### Project Structure
+```
+docassemble/alkilntests/
+  data/
+    questions/        # Interview YAML files (example_motion.yml, test.yml)
+    sources/          # ALKiln test files (.feature)
+    templates/        # DOCX templates for forms
+    static/           # CSS, JS, images
+```
 
 ### Required Secrets
-The project requires these GitHub repository secrets to function:
-- `SERVER_URL` - Docassemble testing server URL (never production)
-- `DOCASSEMBLE_DEVELOPER_API_KEY` - API key from the docassemble server
+- `SERVER_URL` - Docassemble server URL (test server only)
+- `DOCASSEMBLE_DEVELOPER_API_KEY` - API key for deployment
 
 ## Critical Workflows
 
-### Test Development Pattern
-1. Replace `"your_interview_file.yml"` with actual interview filenames in feature files
-2. Use Gherkin steps like:
-   - `Given I start the interview at "filename.yml"`
-   - `And I set the var "variable_name" to "value"`
-   - `And I continue`
-   - `Then I should see the phrase "expected text"`
+### 5 GitHub Actions Workflows
+1. **assembly_line_build.yml** - Main CI/CD (build, test, validate, ALKiln tests)
+2. **playground_deploy.yml** - Auto-deploy to playground on push
+3. **server_monitor.yml** - Server health monitoring (2x daily)
+4. **word_diff.yml** - Word document comparison for PRs
+5. **alkiln_tests.yml** - Legacy ALKiln tests
 
-### Environment Setup
-- Follow `ALKILN_SETUP.md` for initial configuration
-- Always use a dedicated testing server, never production
-- Test files trigger on pushes to main/master and pull requests
+### Development Workflow
+1. Edit interviews in VS Code (`docassemble/alkilntests/data/questions/*.yml`)
+2. Write tests (`docassemble/alkilntests/data/sources/*.feature`)
+3. Format with Black (`Ctrl+Shift+P` → Run Black Formatter)
+4. Commit and push
+5. Watch workflows run automatically
+6. Test in playground after deployment
 
-## Project-Specific Conventions
+## Key Files & Documentation
 
-### Test File Structure
-- `.feature` files use Gherkin syntax
-- Each scenario tests a specific interview flow or validation
-- Comments show example patterns for common testing scenarios
-- Focus on user journey testing rather than unit tests
+### Essential Documentation
+- `DEPLOYMENT_CHECKLIST.md` - Deployment guide
+- `SUFFOLK_LABS_WORKFLOW.md` - Complete workflow reference
+- `ASSEMBLY_LINE_GUIDE.md` - Assembly Line development
+- `ALKILN_REFERENCE.md` - All ALKiln test steps
+- `SECURITY.md` - Security policies
 
-### Security Practices
-- All server credentials stored as GitHub secrets
-- Testing server separate from production environment
-- API keys created specifically for testing purposes
+### Interview Files
+- `example_motion.yml` - Complete Assembly Line motion form example
+- `test.yml` - Simple test interview
 
-## Development Commands
-- Tests run automatically via GitHub Actions
-- Manual testing requires docassemble server access
-- No local build commands - this is pure integration testing
+### Test Files
+- `example_motion_test.feature` - Motion form tests
+- `pdf_tests.feature` - 40+ PDF test scenarios
+- `test_interviews.feature` - Basic interview tests
 
-## Key Files to Understand
-- `ALKILN_SETUP.md` - Complete setup instructions and security guidelines
-- `test_interviews.feature` - Main test definitions with example patterns
-- `.github/workflows/alkiln_tests.yml` - CI/CD configuration for ALKiln framework
+## Assembly Line Best Practices
 
-## Integration Points
-- **External dependency**: Docassemble server for interview execution
-- **Testing framework**: ALKiln (SuffolkLITLab) for browser automation
-- **CI/CD**: GitHub Actions for automated test execution
-- **Target files**: Docassemble YAML interview files (not in this repo)
+### Use Assembly Line Objects
+```yaml
+objects:
+  - users: ALPeopleList.using(ask_number=True)
+  - other_parties: ALPeopleList.using(ask_number=True)
+  - court_bundle: ALDocumentBundle
+```
+
+### Interview Structure
+```yaml
+include:
+  - docassemble.AssemblyLine:assembly_line.yml
+---
+mandatory: True
+code: |
+  # Interview order block
+  intro_screen
+  users[0].name.first
+  # ... collect info
+  download_screen
+```
+
+### Testing with ALKiln
+```gherkin
+Scenario: Complete form
+  Given I start the interview at "example_motion"
+  And I get to the question id "signature" with this data:
+    | var | value | trigger |
+    | users[0].name.first | Jane | |
+    | users[0].name.last | Smith | users[0].signature |
+  And I sign
+  And I continue
+  Then I should see the phrase "Your Motion to Continue is ready"
+```
+
+## VS Code Integration
+
+### Tasks Available (Ctrl+Shift+P → Tasks)
+- Run Black Formatter
+- Run Python Unit Tests
+- Git: Commit and Push
+- Open GitHub Actions
+- Deploy to Playground
+
+### Recommended Extensions
+- Cucumber (Gherkin syntax)
+- Python + Pylance
+- Black Formatter
+- YAML support
+- GitLens
+
+## Security Practices
+- Never commit credentials
+- Use GitHub secrets only
+- Test server only (never production)
+- Review SECURITY.md for policies
 
 ## Common Patterns
-When adding new tests, follow the existing scenario structure and use the commented examples in `test_interviews.feature` as templates for user flows, validation testing, and multi-step interviews.
+- Assembly Line objects for people, documents, courts
+- ALKiln story tables for efficient testing
+- PDF regression testing with comparison
+- Automatic playground deployment on push
