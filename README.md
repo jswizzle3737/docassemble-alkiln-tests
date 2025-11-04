@@ -2,9 +2,18 @@
 
 Automated testing environment for docassemble interviews using [ALKiln](https://assemblyline.suffolklitlab.org/docs/components/ALKiln/alkiln/).
 
+## ✨ Features
+
+- 🧪 **Automated Testing**: Write Gherkin test scenarios for your docassemble interviews
+- 📄 **PDF Field Extraction**: Automatically extract form fields from PDFs and generate interview YAML files
+- 🚀 **CI/CD Integration**: Automated testing with GitHub Actions
+- 🔄 **Continuous Deployment**: Auto-deploy to your docassemble playground
+
 ## 🚀 New Here? Get Started!
 
 **👉 [Follow the DEPLOYMENT_CHECKLIST.md](./DEPLOYMENT_CHECKLIST.md)** - Complete deployment guide with Suffolk LIT Lab Assembly Line workflow!
+
+**📄 [PDF Field Extractor Guide](./PDF_EXTRACTOR_GUIDE.md)** - Extract fields from PDFs and generate interview YAML files
 
 ---
 
@@ -52,6 +61,32 @@ Scenario: User completes interview
 - **Push to main** → Tests run automatically ✅
 - **Create a PR** → Tests run automatically ✅
 - Check results in **Actions** tab
+
+---
+
+## 📄 PDF Field Extraction (NEW!)
+
+Automatically extract form fields from PDF documents and generate docassemble interview YAML files.
+
+### Quick Start
+```bash
+# Install dependencies
+pip install pymupdf
+
+# Extract fields from a single PDF
+python -m docassemble.alkilntests.pdf_extractor input.pdf output.yml
+
+# Batch process all PDFs in a directory
+python batch_extract_pdfs.py docassemble/alkilntests/data/static
+```
+
+### Features
+- ✅ Extract form fields from any fillable PDF
+- ✅ Identify field types (text, checkbox, radiobutton, etc.)
+- ✅ Generate docassemble YAML template files automatically
+- ✅ Batch process multiple PDFs at once
+
+**📚 [Complete PDF Extractor Guide](./PDF_EXTRACTOR_GUIDE.md)**
 
 ---
 
