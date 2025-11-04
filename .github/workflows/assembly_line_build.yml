@@ -1,0 +1,90 @@
+name: Assembly Line Build and Test
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  # Build and validate the docassemble package
+  build-and-validate:
+    runs-on: ubuntu-latest
+    name: Build Package
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build and validate docassemble package
+        uses: SuffolkLITLab/ALActions/da_build@main
+        with:
+          python-version: "3.12"
+
+  # Run Python unit tests
+  python-tests:
+    runs-on: ubuntu-latest
+    name: Python Unit Tests
+    needs: build-and-validate
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Python tests
+        uses: SuffolkLITLab/ALActions/pythontests@main
+
+  # Validate DOCX Jinja2 templates
+  validate-docx:
+    runs-on: ubuntu-latest
+    name: Validate DOCX Templates
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate Jinja2 in DOCX files
+        uses: SuffolkLITLab/ALActions/valid_jinja2@main
+        with:
+          artifact_name: jinja-validation-report
+          output_dir: jinja_validation
+          summary_file: jinja_validation_summary.md
+
+  # Check Python code formatting
+  check-formatting:
+    runs-on: ubuntu-latest
+    name: Check Black Formatting
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check formatting with Black
+        uses: SuffolkLITLab/ALActions/black-formatting@main
+        with:
+          MAKE_PR: "true"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # Validate docstrings
+  check-docstrings:
+    runs-on: ubuntu-latest
+    name: Validate Docstrings
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check docstrings with docsig
+        uses: SuffolkLITLab/ALActions/docsig@main
+
+  # Run ALKiln end-to-end tests
+  alkiln-tests:
+    runs-on: ubuntu-latest
+    name: ALKiln End-to-End Tests
+    needs: build-and-validate
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run ALKiln Tests
+        uses: SuffolkLITLab/ALKiln@v5
+        with:
+          SERVER_URL: ${{ secrets.SERVER_URL }}
+          DOCASSEMBLE_DEVELOPER_API_KEY: ${{ secrets.DOCASSEMBLE_DEVELOPER_API_KEY }}

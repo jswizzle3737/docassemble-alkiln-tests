@@ -1,0 +1,64 @@
+# Configuration for Assembly Line tools
+
+[tool.black]
+# Black code formatter configuration
+line-length = 88
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+extend-exclude = '''
+/(
+    __init__\.py
+  | setup\.py
+  | \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.docsig]
+# Docstring signature validation
+check-class = true
+check-dunders = false
+check-overridden = false
+check-protected = true
+check-nested = false
+summary = true
+list-checks = false
+string-only = false
+
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "docassemble.alkilntests"
+version = "1.0.0"
+description = "ALKiln testing package for docassemble interviews"
+readme = "README.md"
+authors = [{name = "jswizzle3737", email = "your.email@example.com"}]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/jswizzle3737/docassemble-alkiln-tests"
+Documentation = "https://github.com/jswizzle3737/docassemble-alkiln-tests/blob/main/README.md"
+Repository = "https://github.com/jswizzle3737/docassemble-alkiln-tests"
+Issues = "https://github.com/jswizzle3737/docassemble-alkiln-tests/issues"

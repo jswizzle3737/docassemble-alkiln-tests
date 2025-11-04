@@ -1,0 +1,31 @@
+{
+  "recommendations": [
+    // Gherkin/Cucumber support for .feature files
+    "alexkrechik.cucumberautocomplete",
+    "stevejpurves.cucumber",
+
+    // Python development
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-python.black-formatter",
+
+    // YAML support
+    "redhat.vscode-yaml",
+
+    // Code formatting and linting
+    "esbenp.prettier-vscode",
+    "charliermarsh.ruff",
+
+    // Spell checking
+    "streetsidesoftware.code-spell-checker",
+
+    // Git integration
+    "eamodio.gitlens",
+    "github.vscode-pull-request-github",
+
+    // Markdown support
+    "yzhang.markdown-all-in-one",
+    "davidanson.vscode-markdownlint"
+  ],
+  "unwantedRecommendations": []
+}

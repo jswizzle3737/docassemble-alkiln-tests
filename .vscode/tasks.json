@@ -1,0 +1,113 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Black Formatter",
+      "type": "shell",
+      "command": "black",
+      "args": ["docassemble"],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Check Black Formatting",
+      "type": "shell",
+      "command": "black",
+      "args": ["--check", "docassemble"],
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Run Python Unit Tests",
+      "type": "shell",
+      "command": "python",
+      "args": ["-m", "unittest", "discover"],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Git: Push to GitHub",
+      "type": "shell",
+      "command": "git",
+      "args": ["push"],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Git: Commit and Push",
+      "type": "shell",
+      "command": "git",
+      "args": [
+        "add", ".", "&&",
+        "git", "commit", "-m", "\"${input:commitMessage}\"", "&&",
+        "git", "push"
+      ],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Open GitHub Actions",
+      "type": "shell",
+      "command": "echo",
+      "args": ["'Open: https://github.com/jswizzle3737/docassemble-alkiln-tests/actions'"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Open Docassemble Server",
+      "type": "shell",
+      "command": "echo",
+      "args": ["'Open: https://docassemble-uugcj-u59651.vm.elestio.app:443/'"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Deploy to Playground (Manual)",
+      "type": "shell",
+      "command": "gh",
+      "args": [
+        "workflow", "run", "playground_deploy.yml"
+      ],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "commitMessage",
+      "description": "Commit message",
+      "default": "Update code",
+      "type": "promptString"
+    }
+  ]
+}

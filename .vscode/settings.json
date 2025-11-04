@@ -1,0 +1,110 @@
+{
+  // Python settings
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.formatting.provider": "black",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.testing.unittestEnabled": true,
+  "python.testing.pytestEnabled": false,
+
+  // Cucumber/Gherkin settings
+  "cucumberautocomplete.steps": [
+    "docassemble/alkilntests/data/sources/*.feature",
+    "*.feature"
+  ],
+  "cucumberautocomplete.syncfeatures": "docassemble/alkilntests/data/sources/*.feature",
+  "cucumberautocomplete.strictGherkinCompletion": true,
+  "cucumberautocomplete.smartSnippets": true,
+  "cucumberautocomplete.stepsInvariants": true,
+  "cucumberautocomplete.customParameters": [
+    {
+      "parameter": "{string}",
+      "value": "\"([^\"]*)\""
+    }
+  ],
+
+  // File associations
+  "files.associations": {
+    "*.feature": "cucumber",
+    "*.yml": "yaml",
+    "*.yaml": "yaml"
+  },
+
+  // Editor settings
+  "editor.formatOnSave": true,
+  "editor.rulers": [88],
+  "editor.quickSuggestions": {
+    "comments": false,
+    "strings": true,
+    "other": true
+  },
+
+  // Format settings per language
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "[cucumber]": {
+    "editor.defaultFormatter": "alexkrechik.cucumberautocomplete",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.tabSize": 2
+  },
+
+  // Spell checker configuration
+  "cSpell.words": [
+    "ALKiln",
+    "ALActions",
+    "docassemble",
+    "Gherkin",
+    "Puppeteer",
+    "AssemblyLine",
+    "alkilntests",
+    "suffolklitlab",
+    "docsig",
+    "pyproject",
+    "jswizzle"
+  ],
+
+  // File exclusions
+  "files.exclude": {
+    "**/.git": true,
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/.DS_Store": true,
+    "**/.pytest_cache": true,
+    "**/.venv": true,
+    "**/node_modules": true
+  },
+
+  // Search exclusions
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/.git": true,
+    "**/__pycache__": true,
+    "**/.venv": true
+  },
+
+  // Git settings
+  "git.ignoreLimitWarning": true,
+
+  // YAML schema association
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": ".github/workflows/*.yml"
+  }
+}

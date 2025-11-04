@@ -1,13 +1,13 @@
 # Write your interview tests here using Gherkin syntax
-# See GETTING_STARTED.md for examples and guidance
+# See WORKFLOW_GUIDE.md for complete instructions on creating interviews and tests
 
 Feature: Interview Tests
 
-# ✅ EXAMPLE TEST - Replace with your own!
-Scenario: Example test scenario
+# ✅ EXAMPLE TEST - This tests the built-in test.yml interview
+Scenario: Test interview completes successfully
   Given I start the interview at "test"
   And I continue
-  Then I should see the phrase "Thank you"
+  Then I should see the phrase "Thank you for testing"
 
 # 📝 COMMON TEST PATTERNS (uncomment and modify as needed)
 

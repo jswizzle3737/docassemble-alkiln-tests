@@ -1,7 +1,10 @@
-Feature: Interviews load
+Feature: Interview Tests
 
-Scenario: Test server connection
+# ✅ EXAMPLE TEST - This tests the built-in test.yml interview
+Scenario: Test interview completes successfully
   Given I start the interview at "test"
+  And I continue
+  Then I should see the phrase "Thank you for testing"
 
 # If the above fails, try these alternatives:
 # Scenario: Basic connection test  

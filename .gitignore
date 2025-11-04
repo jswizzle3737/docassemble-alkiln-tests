@@ -58,7 +58,7 @@ env.bak/
 venv.bak/
 
 # IDEs
-.vscode/
+# .vscode/ - Committed for team consistency in Assembly Line development
 .idea/
 *.swp
 *.swo
